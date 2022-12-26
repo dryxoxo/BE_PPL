@@ -24,12 +24,30 @@ const userLogin = (req, res) => {
 };
 
 const userRegister = (req, res) => {
-    res.json({
-      message: "sucsses register",
-    });
-  }
+  let data = {
+    email: req.body.email,
+    password: req.body.password,
+  };
+
+  data.email == "" || data.password == ""
+    ? res.send([
+        {
+          message: "email or password must be filled",
+        },
+      ])
+    : connection.query(
+        "INSERT INTO users SET ?",
+        data,
+        function (err, results, fields) {
+          res.send({
+            message: "sucsses get data",
+            data: results,
+          });
+        }
+      );
+};
 
 module.exports = {
-    userLogin,
-    userRegister
-}
+  userLogin,
+  userRegister,
+};
