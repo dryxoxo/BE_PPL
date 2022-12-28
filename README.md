@@ -16,3 +16,9 @@
 | POST   | /foods           | Create a data food    | Requires Authentication |
 | PUT    | /foods/:id_foods | Update a data food    | Requires Authentication |
 | POST   | /foods/:id_foods | Delete a data food    | Requires Authentication |
+| GET    | /diets/          | Get all data diets    |                         |
+| GET    | /diets/:id_diets | Get a data diet by id |                         |
+| POST   | /diets           | Create a data diet    | Requires Authentication |
+| PUT    | /diets/:id_diets | Update a data diet    | Requires Authentication |
+| POST   | /diets/:id_diets | Delete a data diet    | Requires Authentication |
+
